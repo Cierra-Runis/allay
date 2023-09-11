@@ -1,0 +1,12 @@
+{
+  "home": "主页",
+  "history": "历史",
+  "settings": "设置",
+  "language": "语言",
+  "supportedLanguages": "支持的语言",
+  "colorScheme": "配色方案",
+  "followSystem": "跟随系统",
+  "about": "关于",
+  "links": "链接",
+  "sourceCode": "源代码"
+}

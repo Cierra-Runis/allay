@@ -1,0 +1,12 @@
+{
+  "home": "Home",
+  "history": "History",
+  "settings": "Settings",
+  "language": "Language",
+  "supportedLanguages": "Supported Languages",
+  "colorScheme": "Color Scheme",
+  "followSystem": "Follow System",
+  "about": "About",
+  "links": "Links",
+  "sourceCode": "Source Code"
+}

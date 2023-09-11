@@ -1,6 +1,10 @@
 import 'package:allay/index.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  if (Platform.isAndroid) {
+    await FlutterDisplayMode.setHighRefreshRate();
+  }
   runApp(const MainApp());
 }
 
@@ -9,26 +13,42 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = ThemeData(
+      useMaterial3: true,
+      colorSchemeSeed: Colors.deepPurple,
+      appBarTheme: const AppBarTheme(centerTitle: true),
+      fontFamily: Allay.fontFamily,
+    );
+
+    final darkTheme = ThemeData(
+      useMaterial3: true,
+      brightness: Brightness.dark,
+      colorSchemeSeed: Colors.deepPurple,
+      appBarTheme: const AppBarTheme(centerTitle: true),
+      fontFamily: Allay.fontFamily,
+    );
+
     return MaterialApp(
-      theme: ThemeData(
-        useMaterial3: true,
-        colorSchemeSeed: Colors.deepPurple,
-        appBarTheme: const AppBarTheme(centerTitle: true),
-        fontFamily: 'MinecraftAE',
-      ),
-      darkTheme: ThemeData(
-        useMaterial3: true,
-        brightness: Brightness.dark,
-        colorSchemeSeed: Colors.deepPurple,
-        appBarTheme: const AppBarTheme(centerTitle: true),
-        fontFamily: 'MinecraftAE',
-      ),
+      scrollBehavior: const PlatformScrollBehavior(),
+      theme: theme,
+      darkTheme: darkTheme,
       themeMode: ThemeMode.dark,
       home: const SplashPage(
         rootPage: RootPage(),
         appIcon: AppIconWidget(),
         appName: AppNameWidget(fontSize: 36),
       ),
+      localizationsDelegates: const [
+        AllayL10N.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: const [
+        Locale('en'),
+        Locale('zh', 'CN'),
+        Locale('ja'),
+      ],
     );
   }
 }
@@ -45,15 +65,26 @@ class _RootPageState extends State<RootPage> {
 
   @override
   Widget build(BuildContext context) {
+    final l10N = AllayL10N.of(context);
+
     final destinationModel = NavigationDestinationModel(
-      destinations: const [
-        NavigationDestination(icon: Icon(Icons.home), label: 'Home'),
-        NavigationDestination(icon: Icon(Icons.history), label: 'History'),
-        NavigationDestination(icon: Icon(Icons.settings), label: 'Settings'),
+      destinations: [
+        NavigationDestination(
+          icon: const Icon(Icons.home),
+          label: l10N.home,
+        ),
+        NavigationDestination(
+          icon: const Icon(Icons.history),
+          label: l10N.history,
+        ),
+        NavigationDestination(
+          icon: const Icon(Icons.settings),
+          label: l10N.settings,
+        ),
       ],
       bodies: [
         Scaffold(
-          key: const Key('Home'),
+          key: Key(l10N.home),
           appBar: AppBar(
             title: const Wrap(
               spacing: 8,
@@ -63,13 +94,12 @@ class _RootPageState extends State<RootPage> {
             ),
           ),
         ),
-        const Scaffold(key: Key('History')),
+        Scaffold(key: Key(l10N.history)),
         const SettingsPage(),
       ],
     );
 
     return Scaffold(
-      drawer: const Drawer(),
       body: AnimatedSwitcher(
         duration: const Duration(milliseconds: 200),
         child: destinationModel.bodies.elementAtOrNull(_selectedIndex),
@@ -92,4 +122,15 @@ class NavigationDestinationModel {
   });
   final List<NavigationDestination> destinations;
   final List<Widget> bodies;
+}
+
+class PlatformScrollBehavior extends CupertinoScrollBehavior {
+  const PlatformScrollBehavior();
+
+  @override
+  Set<PointerDeviceKind> get dragDevices => {
+        PointerDeviceKind.touch,
+        PointerDeviceKind.mouse,
+        PointerDeviceKind.trackpad,
+      };
 }

@@ -1,0 +1,6 @@
+package pers.cierra_runis.allay
+
+import io.flutter.embedding.android.FlutterActivity
+
+class MainActivity: FlutterActivity() {
+}

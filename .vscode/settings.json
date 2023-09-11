@@ -14,10 +14,13 @@
     "**/.flutter-plugins-dependencies": true,
     "**/pubspec.lock": true,
     "**/.idea": true,
-    "**/.dart_tool": true
+    "**/.dart_tool": true,
+    "**/.vscode": true
   },
   "explorerExclude.backup": {},
   "cSpell.words": [
-    "LTRB"
+    "displaymode",
+    "LTRB",
+    "trackpad"
   ]
 }
