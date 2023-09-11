@@ -31,7 +31,15 @@ class ChangelogPage extends ConsumerWidget {
     return Scaffold(
       appBar: AppBar(title: Text(l10N.changelog)),
       body: changelog.when(
-        data: (data) => Markdown(data: data),
+        data: (data) => Markdown(
+          styleSheet: MarkdownStyleSheet(
+            blockquoteDecoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(8.0),
+              color: Theme.of(context).colorScheme.surface,
+            ),
+          ),
+          data: data,
+        ),
         error: (error, stackTrace) => Center(
           child: Text('$error'),
         ),
