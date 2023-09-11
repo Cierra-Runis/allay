@@ -7,6 +7,8 @@
   "colorScheme": "Color Scheme",
   "followSystem": "Follow System",
   "about": "About",
-  "links": "Links",
+  "version": "Version",
+  "alreadyLatest": "すでに最新",
+  "changelog": "Changelog",
   "sourceCode": "Source Code"
 }

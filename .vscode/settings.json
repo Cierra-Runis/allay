@@ -15,12 +15,16 @@
     "**/pubspec.lock": true,
     "**/.idea": true,
     "**/.dart_tool": true,
-    "**/.vscode": true
+    "**/.vscode": true,
+    "**/splitMap": true,
+    "**/custom_lint.log": true
   },
   "explorerExclude.backup": {},
   "cSpell.words": [
     "displaymode",
     "LTRB",
-    "trackpad"
+    "riverpod",
+    "trackpad",
+    "unicons"
   ]
 }

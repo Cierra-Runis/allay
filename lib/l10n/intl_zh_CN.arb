@@ -7,6 +7,8 @@
   "colorScheme": "配色方案",
   "followSystem": "跟随系统",
   "about": "关于",
-  "links": "链接",
+  "version": "版本",
+  "alreadyLatest": "已是最新版本",
+  "changelog": "更新日志",
   "sourceCode": "源代码"
 }

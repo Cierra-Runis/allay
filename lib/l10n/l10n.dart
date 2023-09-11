@@ -130,11 +130,31 @@ class AllayL10N {
     );
   }
 
-  /// `Links`
-  String get links {
+  /// `Version`
+  String get version {
     return Intl.message(
-      'Links',
-      name: 'links',
+      'Version',
+      name: 'version',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Upgraded`
+  String get alreadyLatest {
+    return Intl.message(
+      'Upgraded',
+      name: 'alreadyLatest',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Changelog`
+  String get changelog {
+    return Intl.message(
+      'Changelog',
+      name: 'changelog',
       desc: '',
       args: [],
     );

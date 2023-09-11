@@ -8,7 +8,6 @@ class SettingsPage extends StatelessWidget {
     final l10N = AllayL10N.of(context);
 
     return Scaffold(
-      key: Key(l10N.settings),
       body: SafeArea(
         child: BasedListView(
           children: [
@@ -25,32 +24,11 @@ class SettingsPage extends StatelessWidget {
             BasedListSection(
               title: Text(l10N.about),
               children: const [
-                AppInfoListTitle(),
-                LinksListTitle(),
+                InfoListTitle(),
+                ChangelogListTitle(),
               ],
             ),
           ],
-        ),
-      ),
-    );
-  }
-}
-
-class AppInfoListTitle extends StatelessWidget {
-  const AppInfoListTitle({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return BasedListTitle(
-      leading: const AppIconWidget(size: 24),
-      titleText: Allay.name,
-      subtitleText: ['v0.0.1+1', 'arm64-v8a', 'RELEASE'].join(' | '),
-      trailingIcon: Icons.copy_all_rounded,
-      onTap: () => Clipboard.setData(
-        ClipboardData(
-          text: ['v0.0.1+1', 'arm64-v8a', 'RELEASE'].join(' | '),
         ),
       ),
     );

@@ -1,7 +1,13 @@
 class Allay {
-  static const String name = 'Allay';
+  static const name = 'Allay';
 
-  static const String github = 'https://github.com/Cierra-Runis/allay';
+  static const github = 'https://github.com/Cierra-Runis';
 
-  static const String fontFamily = 'MinecraftAE';
+  static const repository = '$github/allay';
+
+  static const release = '$repository/releases';
+
+  static const changelog = '$repository/raw/main/CHANGELOG.md';
+
+  static const fontFamily = 'MinecraftAE';
 }

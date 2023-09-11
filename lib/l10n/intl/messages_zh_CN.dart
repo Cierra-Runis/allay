@@ -23,14 +23,16 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "about": MessageLookupByLibrary.simpleMessage("关于"),
+        "alreadyLatest": MessageLookupByLibrary.simpleMessage("已是最新版本"),
+        "changelog": MessageLookupByLibrary.simpleMessage("更新日志"),
         "colorScheme": MessageLookupByLibrary.simpleMessage("配色方案"),
         "followSystem": MessageLookupByLibrary.simpleMessage("跟随系统"),
         "history": MessageLookupByLibrary.simpleMessage("历史"),
         "home": MessageLookupByLibrary.simpleMessage("主页"),
         "language": MessageLookupByLibrary.simpleMessage("语言"),
-        "links": MessageLookupByLibrary.simpleMessage("链接"),
         "settings": MessageLookupByLibrary.simpleMessage("设置"),
         "sourceCode": MessageLookupByLibrary.simpleMessage("源代码"),
-        "supportedLanguages": MessageLookupByLibrary.simpleMessage("支持的语言")
+        "supportedLanguages": MessageLookupByLibrary.simpleMessage("支持的语言"),
+        "version": MessageLookupByLibrary.simpleMessage("版本")
       };
 }
