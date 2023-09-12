@@ -31,6 +31,7 @@ class ChangelogPage extends ConsumerWidget {
     return Scaffold(
       appBar: AppBar(title: Text(l10N.changelog)),
       body: changelog.when(
+        skipLoadingOnRefresh: false,
         data: (data) => Markdown(
           styleSheet: MarkdownStyleSheet(
             blockquoteDecoration: BoxDecoration(
@@ -41,11 +42,27 @@ class ChangelogPage extends ConsumerWidget {
           data: data,
         ),
         error: (error, stackTrace) => Center(
-          child: Text('$error'),
+          child: Text(
+            '$error',
+            textAlign: TextAlign.center,
+            style: const TextStyle(fontSize: 10),
+          ),
         ),
-        loading: () => const Center(
-          child: CircularProgressIndicator(),
-        ),
+        loading: () => const Center(child: CircularProgressIndicator()),
+      ),
+      floatingActionButton: Wrap(
+        direction: Axis.vertical,
+        spacing: 8,
+        children: [
+          FloatingActionButton.small(
+            onPressed: () => ref.refresh(changelogProvider),
+            child: const Icon(Icons.refresh_rounded),
+          ),
+          FloatingActionButton.small(
+            onPressed: () => launchUrlString(Allay.changelogBlob),
+            child: const Icon(UniconsLine.github_alt),
+          )
+        ],
       ),
     );
   }

@@ -27,5 +27,6 @@
     "riverpod",
     "trackpad",
     "unicons"
-  ]
+  ],
+  "java.configuration.updateBuildConfiguration": "automatic"
 }

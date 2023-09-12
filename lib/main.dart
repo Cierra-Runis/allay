@@ -15,7 +15,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = ThemeData(
       useMaterial3: true,
-      colorSchemeSeed: Colors.deepPurple,
+      colorScheme: Allay.lightColorScheme,
       appBarTheme: const AppBarTheme(centerTitle: true),
       fontFamily: Allay.fontFamily,
     );
@@ -23,7 +23,7 @@ class MainApp extends StatelessWidget {
     final darkTheme = ThemeData(
       useMaterial3: true,
       brightness: Brightness.dark,
-      colorSchemeSeed: Colors.deepPurple,
+      colorScheme: Allay.darkColorScheme,
       appBarTheme: const AppBarTheme(centerTitle: true),
       fontFamily: Allay.fontFamily,
     );

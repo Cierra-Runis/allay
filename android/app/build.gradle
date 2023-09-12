@@ -48,7 +48,6 @@ android {
         versionName flutterVersionName
     }
 
-
     signingConfigs{
         debug{
             keyAlias 'key_alias'

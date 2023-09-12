@@ -21,6 +21,7 @@ export 'package:file_picker/file_picker.dart';
 export 'package:flex_color_scheme/flex_color_scheme.dart';
 export 'package:flutter_localizations/flutter_localizations.dart';
 export 'package:package_info_plus/package_info_plus.dart';
+export 'package:easy_refresh/easy_paging.dart';
 export 'package:unicons/unicons.dart';
 export 'package:url_launcher/url_launcher.dart';
 export 'package:url_launcher/url_launcher_string.dart';

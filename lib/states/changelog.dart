@@ -5,7 +5,7 @@ part 'changelog.g.dart';
 @riverpod
 Future<String> changelog(ChangelogRef ref) async {
   Response response = await Dio().get(
-    Allay.changelog,
+    Allay.changelogRaw,
     options: Options(responseType: ResponseType.plain),
   );
   return response.data;
