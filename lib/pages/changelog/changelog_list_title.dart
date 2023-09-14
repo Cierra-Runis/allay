@@ -7,7 +7,7 @@ class ChangelogListTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10N = AllayL10N.of(context);
 
-    return BasedListTitle(
+    return BasedListTile(
       leadingIcon: Icons.history_rounded,
       titleText: l10N.changelog,
       onTap: () => Navigator.push(

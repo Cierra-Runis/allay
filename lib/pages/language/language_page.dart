@@ -14,10 +14,10 @@ class LanguagePage extends StatelessWidget {
       body: BasedListView(
         children: [
           BasedListSection(
-            title: Text(l10N.supportedLanguages),
+            titleText: l10N.supportedLanguages,
             children: [
               for (final locale in AllayL10N.delegate.supportedLocales)
-                BasedListTitle(
+                BasedListTile(
                   leadingIcon: Localizations.localeOf(context) == locale
                       ? Icons.check_rounded
                       : null,

@@ -7,7 +7,7 @@ class LanguageListTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10N = AllayL10N.of(context);
 
-    return BasedListTitle(
+    return BasedListTile(
       leadingIcon: Icons.translate_rounded,
       titleText: l10N.language,
       onTap: () => Navigator.push(

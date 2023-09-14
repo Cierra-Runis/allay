@@ -12,17 +12,14 @@ class SettingsPage extends StatelessWidget {
         child: BasedListView(
           children: [
             BasedListSection(
-              title: Text(
-                l10N.settings,
-                style: const TextStyle(fontSize: 18),
-              ),
+              titleText: l10N.settings,
               children: const [
                 LanguageListTitle(),
                 ColorSchemeListTitle(),
               ],
             ),
             BasedListSection(
-              title: Text(l10N.about),
+              titleText: l10N.about,
               children: const [
                 InfoListTitle(),
                 ChangelogListTitle(),

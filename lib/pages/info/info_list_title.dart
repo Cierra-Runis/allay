@@ -8,7 +8,7 @@ class InfoListTitle extends ConsumerWidget {
     final l10N = AllayL10N.of(context);
     final currentVersion = ref.watch(currentVersionProvider);
 
-    return BasedListTitle(
+    return BasedListTile(
       leading: const AppIconWidget(size: 24),
       titleText: l10N.version,
       subtitleText: currentVersion.when(

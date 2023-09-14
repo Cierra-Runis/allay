@@ -7,7 +7,7 @@ class ColorSchemeListTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10N = AllayL10N.of(context);
 
-    return BasedListTitle(
+    return BasedListTile(
       leadingIcon: Icons.color_lens_rounded,
       titleText: l10N.colorScheme,
       onTap: () => Navigator.push(
